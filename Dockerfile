@@ -17,7 +17,6 @@ RUN apt-get clean && \
 # Install jmeter
 RUN   mkdir /jmeter \
 		&& cd /jmeter/ \
-		&& mkdir jmxfile \
 		&& wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz \
 		&& tar -xzf apache-jmeter-${JMETER_VERSION}.tgz \
 		&& rm apache-jmeter-${JMETER_VERSION}.tgz \
@@ -25,6 +24,8 @@ RUN   mkdir /jmeter \
 		&& cd /jmeter-plugins/ \
 		&& wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-1.4.0.zip \
 		&& unzip -o JMeterPlugins-ExtrasLibs-1.4.0.zip -d /jmeter/apache-jmeter-${JMETER_VERSION}/
+
+RUN mkdir -p /jmeter/apache-jmeter-${JMETER_VERSION}/bin/jmxfile
 
 # Set Jmeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-${JMETER_VERSION}/
