@@ -12,6 +12,7 @@ RUN apt-get clean && \
 				default-jre-headless \
 				telnet \
 				iputils-ping \
+				vim \
 				unzip
 
 # Install jmeter
