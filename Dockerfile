@@ -18,11 +18,11 @@ RUN apt-get clean && \
 # Install jmeter
 RUN   mkdir /jmeter \
 		&& cd /jmeter/ \
-		&& mkdir jmxfile config \
+		&& mkdir {jmxfile, config} \
 		&& wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz \
 		&& tar -xzf apache-jmeter-${JMETER_VERSION}.tgz \
 		&& mv apache-jmeter-${JMETER_VERSION}/bin/user.properties config\
-		&& perl -pi -e 's/user.properties=user.properties/user.properties=\/jmeter\/config\/user.properties/g' apache-jmeter-${JMETER_VERSION}/bin/jmeter.properties
+		&& perl -pi -e 's/user.properties=user.properties/user.properties=\/jmeter\/config\/user.properties/g' apache-jmeter-${JMETER_VERSION}/bin/jmeter.properties \
 		&& rm apache-jmeter-${JMETER_VERSION}.tgz \
 		&& mkdir /jmeter-plugins \
 		&& cd /jmeter-plugins/ \
