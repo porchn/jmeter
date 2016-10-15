@@ -19,7 +19,6 @@ RUN apt-get clean && \
 RUN   mkdir /jmeter \
 		&& cd /jmeter/ \
 		&& mkdir jmxfile \
-		&& mkdir userconfig \
 		&& wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz \
 		&& tar -xzf apache-jmeter-${JMETER_VERSION}.tgz \
 		&& rm apache-jmeter-${JMETER_VERSION}.tgz \
