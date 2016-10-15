@@ -7,6 +7,7 @@ ENV JMETER_VERSION 3.0
 # Install wger & JRE
 RUN apt-get clean && \
 	apt-get update && \
+	apt-get install vim && \
 	apt-get -qy install \
 				wget \
 				default-jre-headless \
