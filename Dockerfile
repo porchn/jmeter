@@ -14,6 +14,9 @@ RUN apt-get clean && \
 				iputils-ping \
 				unzip
 
+# Install vim
+RUN apt-get install -y vim
+
 # Install jmeter
 RUN   mkdir /jmeter \
 		&& cd /jmeter/ \
