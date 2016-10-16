@@ -28,6 +28,7 @@ RUN   mkdir /jmeter \
 		&& wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-1.4.0.zip \
 		&& unzip -o JMeterPlugins-ExtrasLibs-1.4.0.zip -d /jmeter/apache-jmeter-${JMETER_VERSION}/
 
+
 # Set Jmeter Home
 ENV JMETER_HOME /jmeter/apache-jmeter-${JMETER_VERSION}/
 
