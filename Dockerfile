@@ -3,6 +3,11 @@ FROM ubuntu
 MAINTAINER Porchn
 
 ENV JMETER_VERSION 3.0
+ENV TZ=Asia/Bangkok
+
+# Set the timezone.
+RUN echo $TZ > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Install wger & JRE
 RUN apt-get clean && \
